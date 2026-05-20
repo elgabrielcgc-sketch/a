@@ -1,0 +1,6 @@
+#ifndef PROVIDER_CPP
+#define PROVIDER_CPP
+
+#include "Provider.h"
+
+#endif
