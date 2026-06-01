@@ -1,58 +1,25 @@
-#include<iostream>
+#include "Matrix.h"
 
-#include "Helper.h"
-#include "Person.h"
-#include "Phone.h"
-
-int main (int argc, char *argv[]) {
-	Helper helper;
-	Person person;
-	Phone phone;
+int main() {
 	
-	unsigned int option;
+	unsigned int rows;
+	unsigned int columns;
 	
-	do {
-		option = helper.showMenu();
-		
-		switch(option) {
-		case 1:
-			if(person.insert()) {
-				std::cout << std::endl << "Registro realizado correctamente.";
-				
-				break;
-			}
-			
-			std::cout << std::endl << "El registro no pudo realizarse, verifique los datos.";
-			
-			break;
-			
-		case 2:
-			phone.insert();
-			
-			break;
-			
-		case 3:
-			person.showData();
-			
-			break;
-			
-		case 4:
-			person.searchByDni();
-			
-			break;
-			
-		case 5:
-			
-			phone.removePhone();
-			
-			break;
-			
-		case 0: return 0;
-		}
-		
-		std::cout << std::endl << std::endl;
-		system("pause");
-	} while(option != 0);
+	std::cout << "Ingrese numero de filas: ";
+	std::cin >> rows;
+	
+	std::cout << "Ingrese numero de columnas: ";
+	std::cin >> columns;
+	
+	Matrix matrix(rows, columns);
+	
+	matrix.inputData();
+	
+	std::cout << std::endl;
+	std::cout << "MATRIZ INGRESADA" << std::endl;
+	std::cout << "----------------" << std::endl;
+	
+	matrix.showData();
 	
 	return 0;
 }
